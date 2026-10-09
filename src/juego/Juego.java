@@ -1,8 +1,5 @@
 package juego;
-
-
 import java.awt.Color;
-
 import entorno.Entorno;
 import entorno.InterfaceJuego;
 
@@ -10,7 +7,13 @@ public class Juego extends InterfaceJuego
 {
 	// El objeto Entorno que controla el tiempo y otros
 	private Entorno entorno;
-	
+	private Personaje personaje;
+	private Ladron[] ladron;
+	private int puntaje;
+	private Fondo fondo;
+	private Manzana manzana;
+	private Vidas vidas;
+
 	// Variables y métodos propios de cada grupo
 	// ...
 	
@@ -18,7 +21,13 @@ public class Juego extends InterfaceJuego
 	{
 		// Inicializa el objeto entorno
 		this.entorno = new Entorno(this, "Proyecto para TP", 800, 600);
-		
+		this.titulo = new titulo("Repartidor mercado libre");
+		this.fondo = new fondo(800,600);
+		this.personaje = new Personaje(400,500);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setResizable(false);
+		setVisible(true);
+
 		// Inicializar lo que haga falta para el juego
 		// ...
 
